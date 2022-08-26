@@ -23,7 +23,7 @@ procedure lex_analysis();begin
       writeln(a);
       close(text);
     end
-    else if token[i]='+' then index:=index+1;
+    else if token[i]='N' then index:=index+1;
   end;
 end;
   
@@ -40,7 +40,7 @@ begin
   for i:=0 to 255 do begin
     token[i]:='.';
   end;
-  Assign(prg,'code.P+');
+  Assign(prg,'code.PN');
   Assign(text,'text.txt');
   reset(prg);
   while not eof(prg) do begin
