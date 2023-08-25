@@ -1,2 +1,2 @@
-text from the file text.txt
-yes
+this text from file
+PNP
