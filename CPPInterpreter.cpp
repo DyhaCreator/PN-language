@@ -3,18 +3,14 @@
 #include <string>
 
 int main(){
-    std::ifstream inCode("code.PN");
-    std::ifstream inText("text.txt");
-    std::string str, code = "";
-    while(getline(inCode, str)){
-        code += str;
-    }
-    getline(inText, str);
-    for(int i = 0; i < code.size(); i++){
-        if(code[i] == 'P')
-            std::cout << str << std::endl;
-        else if(code[i] == 'N')
-            getline(inText, str);
+    std::ifstream inCode("code.PN"), inText("text.txt");
+    std::string text, code = "";
+    while(getline(inCode, code)){
+        getline(inText, text);
+        for(auto ch : code){
+            if(ch == 'P')std::cout << text << std::endl;
+            else if(ch == 'N')getline(inText, text);
+        }
     }
     return 0;
 }
